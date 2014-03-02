@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/usrProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <ImageView
+        android:id="@+id/image_SignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/image_SignIn"
+        android:gravity="center_horizontal"
+        android:text="Bruce Wayne"
+        android:textColor="#0088DD"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/usrProfilePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textSettings"
+        android:layout_toRightOf="@+id/image_SignIn"
+        android:gravity="center_horizontal"
+        android:text="9886123456"
+        android:textColor="#008800"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/image_SignIn"
+        android:fadeScrollbars="true" >
+
+        <TextView
+            android:id="@+id/textboxChats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Msg 1 from Contact"
+            android:background="#DDDDDD" 
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textboxSettings2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textboxChats"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Msg 1 from User"
+            android:background="#888888"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textboxChats"
+            android:layout_below="@+id/textboxSettings2"
+            android:layout_marginTop="10dp"
+            android:background="#DDDDDD"
+            android:text="Msg 2 from Contact"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/textboxSettings2"
+            android:layout_below="@+id/TextView01"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#888888"
+            android:text="Msg 2 from User"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textboxChatMsg"
+        android:text="SEND" />
+
+    <EditText
+        android:id="@+id/textboxChatMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/buttonLogOut"
+        android:layout_alignBottom="@+id/buttonLogOut"
+        android:layout_alignParentLeft="true"
+        android:ems="15"
+        android:inputType="textMultiLine"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:background="#FFFFFF" />
+    <requestFocus />
+
+</RelativeLayout>

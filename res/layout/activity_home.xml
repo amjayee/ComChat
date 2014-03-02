@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".HomeScreen" >
+
+    <ImageView
+        android:id="@+id/home_Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dataLimit_home"
+        android:layout_alignTop="@+id/me_home"
+        android:background="#000000"
+        android:src="@drawable/ico_settings" />
+
+    <ImageView
+        android:id="@+id/dataLimit_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textboxChats"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80sp"
+        android:background="#000000"
+        android:src="@drawable/ico_data_limit" />
+
+
+
+    <TextView
+        android:id="@+id/textboxChats"
+        android:layout_width="90sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dataMoni_home"
+        android:layout_alignRight="@+id/dataMoni_home"
+        android:layout_below="@+id/dataMoni_home"
+        android:layout_marginTop="12sp"
+        android:gravity="center"
+        android:minLines="2"
+        android:text="@string/title_activity_chat"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textboxContacts"
+        android:layout_width="90sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textboxChats"
+        android:layout_alignBottom="@+id/textboxChats"
+        android:layout_alignLeft="@+id/dataLimit_home"
+        android:layout_alignRight="@+id/dataLimit_home"
+        android:gravity="center"
+        android:minLines="2"
+        android:text="@string/title_activity_friends"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textboxSettings"
+        android:layout_width="90sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textboxUserInfo"
+        android:layout_alignBottom="@+id/textboxUserInfo"
+        android:layout_alignLeft="@+id/home_Settings"
+        android:layout_alignRight="@+id/home_Settings"
+        android:gravity="center"
+        android:text="@string/title_activity_settings"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/me_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textboxChats"
+        android:layout_below="@+id/textboxContacts"
+        android:layout_marginTop="76sp"
+        android:background="#000000"
+        android:src="@drawable/ico_user" />
+
+    <TextView
+        android:id="@+id/textboxUserInfo"
+        android:layout_width="90sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/me_home"
+        android:layout_below="@+id/me_home"
+        android:layout_marginTop="43sp"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/dataMoni_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recieve"
+        android:layout_marginLeft="63sp"
+        android:layout_marginTop="58sp"
+        android:background="#000000"
+        android:src="@drawable/ico_monitoring" />
+
+    <TextView
+        android:id="@+id/recieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="@string/APPName"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
