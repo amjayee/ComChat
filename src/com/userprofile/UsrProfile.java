@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 import com.google.android.gms.plus.sample.quickstart.GlobalParameter;
 import com.google.android.gms.plus.sample.quickstart.Home;
 import com.google.android.gms.plus.sample.quickstart.R;
+import com.google.android.gms.plus.sample.quickstart.Settings;
 
 public class UsrProfile extends Activity {
 	ImageView mePic ;
@@ -55,7 +57,9 @@ public class UsrProfile extends Activity {
 		});
 	}
 	private void loadStatusPopUp() {
-		dialog = new Dialog(this);
+		Intent meIntent = new Intent(getApplicationContext(), UsrStatus.class);
+		startActivityForResult(meIntent, 0);
+		/*		dialog = new Dialog(this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_edittext);
 		dialog.setTitle("");
@@ -71,7 +75,7 @@ public class UsrProfile extends Activity {
 				dialog.dismiss();
 			}
 		});
-		dialog.show();
+		dialog.show();*/
 	}
 	private void loadUserProperties() {
 		mePic = (ImageView)findViewById(R.id.mePic);

@@ -9,8 +9,80 @@
     tools:context=".Feedbk" >
 
     <TextView
+        android:id="@+id/textCurrentPhoneNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/feedback" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/feedback"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="SEND" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textPhoneNum"
+        android:layout_alignRight="@+id/textPhoneNum"
+        android:layout_below="@+id/textPhoneNum"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/textPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCurrentPhoneNum"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:ems="15"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:editable="false" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="27dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_below="@+id/ratingBar1"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:text="Enter your Feedback" >
+
+        <requestFocus />
+    </EditText>
 </RelativeLayout>

@@ -51,7 +51,7 @@
     <string name="phone">Phone</string>
     <string name="name">Name</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_chat">CHATS</string>
+    <string name="title_activity_chat">Chats</string>
     <string name="title_activity_friends">Friends</string>
     <string name="title_activity_contact_profile">Contact_profile</string>
     <string name="profile">Profile</string>
@@ -69,4 +69,11 @@
   	<string name="userCurrentStatus">Your Current Status</string>
   	<string name="enterStatus">Enter your Status</string>
   	<string name="save">Save</string>
+   	<string name="title_about_text1">ComChat V1.0</string>
+  	<string name="title_about_text2">© 2014 ComChat Application</string>
+  	<string name="title_blocked_contacts">BLOCKED CONTACTS</string>
+  	<string name="FAQ3">Ans: The Contacts get automatically added from the contact book.</string>
+  	<string name="FAQ2">Ans: There is an Unregister Account option in the Settings screen that will unregister your account from the application.</string>
+  	<string name="FAQ1">Ans: You can use any of your active Google accounts to register and use the ComChat application.</string>
+  	<string name="statusSet">Your Status</string>
 </resources>

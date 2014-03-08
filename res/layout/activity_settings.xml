@@ -39,13 +39,13 @@
             android:orientation="horizontal" >
 
             <ImageView
-                android:id="@+id/helpImg"
+                android:id="@+id/FaqImg"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2sp"
                 android:ems="15"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:src="@drawable/help"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20sp"
@@ -62,7 +62,7 @@
                 android:padding="10sp"
                 android:text="@string/FAQ"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="#0088DD"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -84,6 +84,8 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2sp"
+                android:padding="5sp"
+                android:src="@drawable/help"
                 android:visibility="visible" />
 
             <TextView
@@ -96,7 +98,7 @@
                 android:padding="10sp"
                 android:text="@string/about"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="#0088DD"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -118,6 +120,8 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2sp"
+                android:padding="5sp"
+                android:src="@drawable/help"
                 android:visibility="visible" />
 
             <TextView
@@ -130,7 +134,7 @@
                 android:padding="10sp"
                 android:text="@string/profile"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="#0088DD"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -152,6 +156,8 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2sp"
+                android:padding="5sp"
+                android:src="@drawable/help"
                 android:visibility="visible" />
 
             <TextView
@@ -164,7 +170,7 @@
                 android:padding="10sp"
                 android:text="@string/blkcontact"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="#0088DD"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -187,6 +193,8 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="2sp"
+                android:padding="5sp"
+                android:src="@drawable/help"
                 android:visibility="visible" />
 
             <TextView
@@ -199,7 +207,7 @@
                 android:padding="10sp"
                 android:text="@string/feedback"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
+                android:textColor="#0088DD"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -9,12 +9,12 @@ public class UserBean {
 	int N_TOTMSG_SEND;
 	int N_TOTMSG_RECEIVE;
 	int N_CUR_STAT_ID;
-	String V_STATUS;
-	public String getV_STATUS() {
+	CharSequence V_STATUS;
+	public CharSequence getV_STATUS() {
 		return V_STATUS;
 	}
-	public void setV_STATUS(String v_STATUS) {
-		V_STATUS = v_STATUS;
+	public void setV_STATUS(CharSequence s) {
+		V_STATUS = s;
 	}
 	String D_CREATED;
 	//Current Device of the user

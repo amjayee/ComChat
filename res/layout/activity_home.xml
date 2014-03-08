@@ -23,8 +23,8 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="80sp"
         android:background="#000000"
-        android:src="@drawable/ico_data_limit" />
-
+        android:src="@drawable/friends1" />
+<!-- friends -->
 
 
     <TextView
@@ -99,8 +99,8 @@
         android:layout_marginLeft="63sp"
         android:layout_marginTop="58sp"
         android:background="#000000"
-        android:src="@drawable/ico_monitoring" />
-
+        android:src="@drawable/talk" />
+<!-- Chats -->
     <TextView
         android:id="@+id/recieve"
         android:layout_width="wrap_content"

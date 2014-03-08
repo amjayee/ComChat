@@ -36,7 +36,7 @@ public class Settings extends Activity {
     }
     private void registerEvents() {
 		help = (LinearLayout) findViewById(R.id.helpLinear);
-		helpImg = (ImageView) findViewById(R.id.helpImg);
+		helpImg = (ImageView) findViewById(R.id.FaqImg);
 		help.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

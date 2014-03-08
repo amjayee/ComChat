@@ -6,11 +6,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/about_screen_wallpaper"    
     tools:context=".About" >
 
     <TextView
+        android:id="@+id/textCurrentImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/about" />
+        android:layout_above="@+id/image_app_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#0088DD"
+        android:text="@string/title_about_text1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/image_app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textCurrentPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_app_logo"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#0088DD"
+        android:layout_marginTop="52sp"
+        android:text="@string/title_about_text2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

@@ -8,9 +8,58 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SettingProfile" >
 
+    <ImageView
+        android:id="@+id/imgProfilePic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ico_user" />
+
     <TextView
+        android:id="@+id/textCurrentImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/profile" />
+        android:layout_below="@+id/imgProfilePic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Current Image"
+        android:textAppearance="?android:attr/textAppearanceMedium" />    
+
+    <EditText
+        android:id="@+id/textPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCurrentImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:ems="8"
+        android:gravity="center_horizontal"
+        android:inputType="phone"
+        android:text="9886815141"
+        android:textSize="30dp" >
+
+        <requestFocus />        
+    </EditText>
+    
+    <TextView
+        android:id="@+id/textCurrentPhoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPhoneNum"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="Current Phone Number"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:text="Save Changes" />
 
 </RelativeLayout>

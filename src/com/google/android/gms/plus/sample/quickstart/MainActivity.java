@@ -46,9 +46,6 @@ import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -75,7 +72,7 @@ ConnectionCallbacks, OnConnectionFailedListener,
 ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 	Bitmap bmp=null;
 	private static final String TAG = "android-plus-quickstart";
-	
+
 	private static final int STATE_DEFAULT = 0;
 	private static final int STATE_SIGN_IN = 1;
 	private static final int STATE_IN_PROGRESS = 2;
@@ -116,8 +113,7 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 	private int mSignInError;
 
 	private SignInButton mSignInButton;
-	private Button mSignOutButton;
-	private TextView mStatus;
+
 
 
 	@Override
@@ -125,10 +121,7 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
 		mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
-		mSignOutButton = (Button) findViewById(R.id.sign_out_button);
-		mStatus = (TextView) findViewById(R.id.sign_in_status);
 		mSignInButton.setOnClickListener(this);
-		mSignOutButton.setOnClickListener(this);
 		if (savedInstanceState != null) {
 			mSignInProgress = savedInstanceState
 					.getInt(SAVED_PROGRESS, STATE_DEFAULT);
@@ -152,6 +145,7 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 	protected void onStart() {
 		super.onStart();
 		mGoogleApiClient.connect();
+		resolveSignInError();
 	}
 
 	@Override
@@ -174,19 +168,16 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 		if (!mGoogleApiClient.isConnecting()) {
 			// We only process button clicks when GoogleApiClient is not transitioning
 			// between connected and not connected.
-			if (v.getId()==R.id.sign_in_button) {
 
-				mStatus.setText(R.string.status_signing_in);
-				resolveSignInError();
-			}
-			else if (v.getId()==R.id.sign_out_button) {    
+			resolveSignInError();
+			/*else if (v.getId()==R.id.sign_out_button) {    
 				// We clear the default account on sign out so that Google Play
 				// services will not return an onConnected callback without user
 				// interaction.
 				Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
 				mGoogleApiClient.disconnect();
 				mGoogleApiClient.connect();
-			}
+			}*/
 		}
 	}
 
@@ -203,25 +194,18 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 
 		// Update the user interface to reflect that the user is signed in.
 		mSignInButton.setEnabled(false);
-		mSignOutButton.setEnabled(true);
 
 		// Retrieve some profile information to personalize our app for the user.
 		Person currentUser = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
 		loadTheBean(currentUser);
-
-		mStatus.setText(String.format(
-				getResources().getString(R.string.signed_in_as),
-				currentUser.getDisplayName()));
-
 		Plus.PeopleApi.loadVisible(mGoogleApiClient, null)
 		.setResultCallback(this);
-
 		// Indicate that the sign in process is complete.
 		mSignInProgress = STATE_DEFAULT;
 	}
 
 	private void loadTheBean(Person currentUser) {
-		
+
 		Home.usrBean.setV_MAIL(Plus.AccountApi.getAccountName(mGoogleApiClient));
 		Home.usrBean.setV_NAME(currentUser.getDisplayName());
 		Home.usrBean.setV_IMAGE_URL(currentUser.getImage().getUrl());	
@@ -241,7 +225,7 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 				/*	ImageButton iv =(ImageButton) findViewById(R.id.Usrpic);
 				iv.setVisibility(View.VISIBLE);
 				iv.setImageBitmap(bmp);*/
-				
+
 				loadUserDetailsAndMove();
 			}
 		};
@@ -255,27 +239,27 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 		GlobalParameter.existFlag = true;
 		Intent meIntent = new Intent(getApplicationContext(), UsrProfile.class);
 		startActivityForResult(meIntent, 0);
-		
+
 	}
 
 	private void createDirectoryAndSaveFile(Bitmap imageToSave, String fileName) {
 		String dir = Environment.getExternalStorageDirectory() + GlobalParameter.picPath;
-	    File direct = new File(dir);
-	    if (!direct.exists()) {
-	        File wallpaperDirectory = new File(dir);
-	        wallpaperDirectory.mkdirs();
-	      }
-	        File file = new File(new File(dir), fileName);
-	        if (file.exists())
-	            file.delete();
-	        try {
-	            FileOutputStream out = new FileOutputStream(file);
-	            imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
-	            out.flush();
-	            out.close();
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
+		File direct = new File(dir);
+		if (!direct.exists()) {
+			File wallpaperDirectory = new File(dir);
+			wallpaperDirectory.mkdirs();
+		}
+		File file = new File(new File(dir), fileName);
+		if (file.exists())
+			file.delete();
+		try {
+			FileOutputStream out = new FileOutputStream(file);
+			imageToSave.compress(Bitmap.CompressFormat.JPEG, 100, out);
+			out.flush();
+			out.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	public void DownloadImageFromPath(){
 		InputStream in =null;
@@ -442,9 +426,7 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 	private void onSignedOut() {
 		// Update the UI to reflect that the user is signed out.
 		mSignInButton.setEnabled(true);
-		mSignOutButton.setEnabled(false);
 		GlobalParameter.existFlag = false;
-		mStatus.setText(R.string.status_signed_out);
 	}
 
 	@Override
@@ -469,7 +451,6 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 							public void onCancel(DialogInterface dialog) {
 								Log.e(TAG, "Google Play services resolution cancelled");
 								mSignInProgress = STATE_DEFAULT;
-								mStatus.setText(R.string.status_signed_out);
 							}
 						});
 			} else {
@@ -482,7 +463,6 @@ ResultCallback<People.LoadPeopleResult>, View.OnClickListener {
 						Log.e(TAG, "Google Play services error could not be "
 								+ "resolved: " + mSignInError);
 						mSignInProgress = STATE_DEFAULT;
-						mStatus.setText(R.string.status_signed_out);
 					}
 				}).create();
 			}
